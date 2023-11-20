@@ -1,0 +1,39 @@
+{% embed 'shared/_tabs.html.twig' %}
+    {% block tabs %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all' } %}
+            {% block content %}
+                All Posts
+            {% endblock %}
+            {% block path %}
+                {{ path('app_show_all') }}
+            {% endblock %}
+        {% endembed %}
+
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'ml-2' } %}
+            {% block content %}
+                Top Liked
+            {% endblock %}
+            {% block path %}
+                {{ path('app_post_top_liked') }}
+            {% endblock %}
+        {% endembed %}
+
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2' } %}
+            {% block content %}
+                From People You Follow
+            {% endblock %}
+            {% block path %}
+                {{ path('app_post_follows') }}
+            {% endblock %}
+        {% endembed %}
+
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2'}%}
+            {% block content %}
+                Boards
+            {% endblock %}
+            {% block path %}
+                {{ path('app_show_post_boards') }}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}

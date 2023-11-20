@@ -1,0 +1,8 @@
+{% if post.image is defined and post.image is not null%}
+    <a href="{{ path('app_show_image', {post: post.id}) }}">
+        <img src="{{ postShortcut ~ post.image }}" class="inline-block" style="height: {{ size }}px; width: {{ size }}px;">
+    </a>
+
+{% else %}
+
+{% endif %}

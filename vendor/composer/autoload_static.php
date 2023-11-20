@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc60c91df441bd981311a6c314726abb3
+class ComposerStaticInit7c63a817118549e773ef1da766c1ebb3
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -16,7 +16,6 @@ class ComposerStaticInitc60c91df441bd981311a6c314726abb3
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '2203a247e6fda86070a5e4e07aed533a' => __DIR__ . '/..' . '/symfony/clock/Resources/now.php',
-        'd45d087767e66b9914075f6f6efd1435' => __DIR__ . '/..' . '/blackfire/php-sdk/src/autostart.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -97,6 +96,7 @@ class ComposerStaticInitc60c91df441bd981311a6c314726abb3
             'Symfony\\Component\\Cache\\' => 24,
             'Symfony\\Component\\BrowserKit\\' => 29,
             'Symfony\\Component\\Asset\\' => 24,
+            'Symfony\\Component\\AssetMapper\\' => 30,
             'Symfony\\Bundle\\WebProfilerBundle\\' => 33,
             'Symfony\\Bundle\\TwigBundle\\' => 26,
             'Symfony\\Bundle\\SecurityBundle\\' => 30,
@@ -108,6 +108,7 @@ class ComposerStaticInitc60c91df441bd981311a6c314726abb3
             'Symfony\\Bridge\\PhpUnit\\' => 23,
             'Symfony\\Bridge\\Monolog\\' => 23,
             'Symfony\\Bridge\\Doctrine\\' => 24,
+            'SymfonyCasts\\Bundle\\VerifyEmail\\' => 32,
         ),
         'P' => 
         array (
@@ -146,14 +147,6 @@ class ComposerStaticInitc60c91df441bd981311a6c314726abb3
             'Doctrine\\Bundle\\MigrationsBundle\\' => 33,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
             'DeepCopy\\' => 9,
-        ),
-        'C' => 
-        array (
-            'Composer\\CaBundle\\' => 18,
-        ),
-        'B' => 
-        array (
-            'Blackfire\\' => 10,
         ),
         'A' => 
         array (
@@ -409,6 +402,10 @@ class ComposerStaticInitc60c91df441bd981311a6c314726abb3
         array (
             0 => __DIR__ . '/..' . '/symfony/asset',
         ),
+        'Symfony\\Component\\AssetMapper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/asset-mapper',
+        ),
         'Symfony\\Bundle\\WebProfilerBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/web-profiler-bundle',
@@ -452,6 +449,10 @@ class ComposerStaticInitc60c91df441bd981311a6c314726abb3
         'Symfony\\Bridge\\Doctrine\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/doctrine-bridge',
+        ),
+        'SymfonyCasts\\Bundle\\VerifyEmail\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfonycasts/verify-email-bundle/src',
         ),
         'Psr\\Log\\' => 
         array (
@@ -557,14 +558,6 @@ class ComposerStaticInitc60c91df441bd981311a6c314726abb3
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
-        ),
-        'Composer\\CaBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
-        ),
-        'Blackfire\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/blackfire/php-sdk/src/Blackfire',
         ),
         'App\\Tests\\' => 
         array (
@@ -1227,9 +1220,9 @@ class ComposerStaticInitc60c91df441bd981311a6c314726abb3
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc60c91df441bd981311a6c314726abb3::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc60c91df441bd981311a6c314726abb3::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitc60c91df441bd981311a6c314726abb3::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7c63a817118549e773ef1da766c1ebb3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7c63a817118549e773ef1da766c1ebb3::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit7c63a817118549e773ef1da766c1ebb3::$classMap;
 
         }, null, ClassLoader::class);
     }

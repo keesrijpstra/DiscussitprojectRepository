@@ -1,0 +1,7 @@
+{% block title %} Editing existing Comment {% endblock %}
+{% block bread %}
+    -> <a href="{{ path('app_add_comment', {post: post.id}) }}">Post -></a> Edit
+{% endblock %}
+{% block body %}
+    {{ include('post/comment.html.twig') }}
+{% endblock %}

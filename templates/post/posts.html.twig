@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}Post index{% endblock %}
+
+
+{% block body %}
+    <h1>Post index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Content</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+            {{ include('post/profile.html.twig', {post: post}) }}
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+

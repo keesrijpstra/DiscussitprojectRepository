@@ -1,0 +1,3 @@
+<?php //c6c34ae3658981fe7b2f38acb6a657f1
+
+return [PHP_INT_MAX, 'styles/app.tailwind.css'];

@@ -1,6 +1,6 @@
 {% embed 'shared/_tabs.html.twig' %}
     {% block tabs %}
-        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all', classes: 'hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 All Posts
             {% endblock %}
@@ -9,7 +9,7 @@
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'ml-2' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 Top Liked
             {% endblock %}
@@ -18,7 +18,7 @@
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 From People You Follow
             {% endblock %}
@@ -27,7 +27,7 @@
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2'}%}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'}%}
             {% block content %}
                 Boards
             {% endblock %}

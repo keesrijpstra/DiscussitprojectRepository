@@ -64,7 +64,7 @@ class __TwigTemplate_aacc64479f519ec4ea9248d3be7e0b6f extends Template
         $this->displayBlock('javascripts', $context, $blocks);
         // line 14
         echo "    </head>
-    <body class=\"bg-gray-100 text-gray-800 m-10\">
+    <body class=\"bg-gray-100\\ min-h-screen\">
         <div class=\"w-full md:w-2/3 mx-auto mb-4 flex justify-between items-center\">
             <div class=\"bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-all duration-300 ease-in-out font-bold text-xl\">
                 <a href=\"";
@@ -78,7 +78,7 @@ class __TwigTemplate_aacc64479f519ec4ea9248d3be7e0b6f extends Template
         // line 23
         echo "            </div>
 
-            <div class=\"text-right\">
+            <div class=\"text-right mt-4\">
                 <div class=\"text-sm text-gray-500 dark:text-gray-400\">
                     ";
         // line 27
@@ -88,50 +88,53 @@ class __TwigTemplate_aacc64479f519ec4ea9248d3be7e0b6f extends Template
                             <a href=\"";
             // line 29
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_show_add");
-            echo "\">Add New</a>
+            echo "\" class=\"text-indigo-500 hover:underline\">Add New</a>
                         </div>
                         <div class=\"text-end\">
                             <a href=\"";
             // line 32
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_settings_profile");
-            echo "\">Profile Settings</a>
+            echo "\" class=\"text-indigo-500 hover:underline\">Profile Settings</a>
                         </div>
-                        <div><a href=\"";
-            // line 34
+                        <div class=\"mt-2\">
+                            <a href=\"";
+            // line 35
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\" >Logout</a></div>
+            echo "\" class=\"text-red-500 hover:underline\">Logout</a>
+                        </div>
                     ";
         } else {
-            // line 36
+            // line 38
             echo "                        <div class=\"flex\">
-                            <div class=\"mr-5\"><a href=\"";
-            // line 37
+                            <div class=\"mr-5\">
+                                <a href=\"";
+            // line 40
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-            echo "\">Login</a></div>
+            echo "\" class=\"text-indigo-500 hover:underline\">Login</a>
+                            </div>
                         </div>
                         <div class=\"flex\">
-                            <div class=\"mr-5\"><a href=\"";
-            // line 40
+                            <div class=\"mr-5\">
+                                <a href=\"";
+            // line 45
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
-            echo "\">Register</a></div>
+            echo "\" class=\"text-indigo-500 hover:underline\">Register</a>
+                            </div>
                         </div>
-
                     ";
         }
-        // line 44
-        echo "
-
-                </div>
+        // line 49
+        echo "                </div>
             </div>
 
         </div>
         <div class=\"w-full md:w-2/3 mx-auto\">
             ";
-        // line 51
+        // line 54
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 51, $this->source); })()), "flashes", ["success"], "method", false, false, false, 51));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 54, $this->source); })()), "flashes", ["success"], "method", false, false, false, 54));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 52
+            // line 55
             echo "                <div class=\"rounded-md p-2 border-green-300 bg-green-50 border\">";
             echo twig_escape_filter($this->env, $context["post"], "html", null, true);
             echo "</div>
@@ -140,12 +143,12 @@ class __TwigTemplate_aacc64479f519ec4ea9248d3be7e0b6f extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 54
+        // line 57
         echo "
             ";
-        // line 55
+        // line 58
         $this->displayBlock('body', $context, $blocks);
-        // line 56
+        // line 59
         echo "        </div>
     </body>
 </html>
@@ -244,7 +247,7 @@ class __TwigTemplate_aacc64479f519ec4ea9248d3be7e0b6f extends Template
 
     }
 
-    // line 55
+    // line 58
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -274,7 +277,7 @@ class __TwigTemplate_aacc64479f519ec4ea9248d3be7e0b6f extends Template
 
     public function getDebugInfo()
     {
-        return array (  248 => 55,  237 => 21,  227 => 20,  214 => 12,  204 => 11,  191 => 8,  181 => 7,  162 => 5,  149 => 56,  147 => 55,  144 => 54,  135 => 52,  131 => 51,  122 => 44,  115 => 40,  109 => 37,  106 => 36,  101 => 34,  96 => 32,  90 => 29,  87 => 28,  85 => 27,  79 => 23,  77 => 20,  72 => 18,  66 => 14,  64 => 11,  61 => 10,  59 => 7,  54 => 5,  48 => 1,);
+        return array (  251 => 58,  240 => 21,  230 => 20,  217 => 12,  207 => 11,  194 => 8,  184 => 7,  165 => 5,  152 => 59,  150 => 58,  147 => 57,  138 => 55,  134 => 54,  127 => 49,  120 => 45,  112 => 40,  108 => 38,  102 => 35,  96 => 32,  90 => 29,  87 => 28,  85 => 27,  79 => 23,  77 => 20,  72 => 18,  66 => 14,  64 => 11,  61 => 10,  59 => 7,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -293,7 +296,7 @@ class __TwigTemplate_aacc64479f519ec4ea9248d3be7e0b6f extends Template
             {{ importmap() }}
         {% endblock %}
     </head>
-    <body class=\"bg-gray-100 text-gray-800 m-10\">
+    <body class=\"bg-gray-100\\ min-h-screen\">
         <div class=\"w-full md:w-2/3 mx-auto mb-4 flex justify-between items-center\">
             <div class=\"bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-all duration-300 ease-in-out font-bold text-xl\">
                 <a href=\"{{ path('app_show_all') }}\"><span>DiscussIt</span>
@@ -303,27 +306,30 @@ class __TwigTemplate_aacc64479f519ec4ea9248d3be7e0b6f extends Template
                 {% endblock %}
             </div>
 
-            <div class=\"text-right\">
+            <div class=\"text-right mt-4\">
                 <div class=\"text-sm text-gray-500 dark:text-gray-400\">
                     {% if app.user %}
                         <div class=\"text-end\">
-                            <a href=\"{{ path(\"app_show_add\") }}\">Add New</a>
+                            <a href=\"{{ path(\"app_show_add\") }}\" class=\"text-indigo-500 hover:underline\">Add New</a>
                         </div>
                         <div class=\"text-end\">
-                            <a href=\"{{ path(\"app_settings_profile\") }}\">Profile Settings</a>
+                            <a href=\"{{ path(\"app_settings_profile\") }}\" class=\"text-indigo-500 hover:underline\">Profile Settings</a>
                         </div>
-                        <div><a href=\"{{ path('app_logout') }}\" >Logout</a></div>
+                        <div class=\"mt-2\">
+                            <a href=\"{{ path('app_logout') }}\" class=\"text-red-500 hover:underline\">Logout</a>
+                        </div>
                     {% else %}
                         <div class=\"flex\">
-                            <div class=\"mr-5\"><a href=\"{{ path('app_login') }}\">Login</a></div>
+                            <div class=\"mr-5\">
+                                <a href=\"{{ path('app_login') }}\" class=\"text-indigo-500 hover:underline\">Login</a>
+                            </div>
                         </div>
                         <div class=\"flex\">
-                            <div class=\"mr-5\"><a href=\"{{ path('app_register') }}\">Register</a></div>
+                            <div class=\"mr-5\">
+                                <a href=\"{{ path('app_register') }}\" class=\"text-indigo-500 hover:underline\">Register</a>
+                            </div>
                         </div>
-
                     {% endif %}
-
-
                 </div>
             </div>
 

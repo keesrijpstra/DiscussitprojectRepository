@@ -10,6 +10,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: CommentRepository::class)]
 class Comment
 {
+
+    public const EDIT = 'COMMENT_EDIT';
+    public const VIEW = 'COMMENT_VIEW';
+
+    public const DELETE = 'COMMENT_DELETE';
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

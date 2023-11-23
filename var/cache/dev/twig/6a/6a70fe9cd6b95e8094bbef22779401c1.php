@@ -124,7 +124,7 @@ class __TwigTemplate_f8b37c9196f3b2a9b0e7d9940edf418a extends Template
         echo "
     </div>
 
-    <div>
+    <div class=\"mt-4\">
         ";
         // line 18
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), "text", [], "any", false, false, false, 18), 'label', ["label_attr" => ["class" => "block text-sm text-gray-700"], "label" => "Please enter a comment"]);
@@ -137,37 +137,54 @@ class __TwigTemplate_f8b37c9196f3b2a9b0e7d9940edf418a extends Template
         // line 20
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), "text", [], "any", false, false, false, 20), 'errors');
         echo "
-        ";
-        // line 21
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), "commentImage", [], "any", false, false, false, 21), 'label', ["label_attr" => ["class" => "shadow-sm border-transparent bg-gray-300 hover:bg-gray-400 cursor-pointer rounded-md border p-2"], "label" => "Change"]);
-        echo "
-        ";
-        // line 22
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), "commentImage", [], "any", false, false, false, 22), 'widget', ["attr" => ["class" => "hidden"]]);
-        echo "
+    </div>
+    <div class=\"mt-4\">
         ";
         // line 23
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "commentImage", [], "any", false, false, false, 23), 'errors');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "commentImage", [], "any", false, false, false, 23), 'label', ["label_attr" => ["class" => "shadow-sm border-transparent bg-gray-300 hover:bg-gray-400 cursor-pointer rounded-md border p-2"], "label" => "Change Image"]);
         echo "
-
+        ";
+        // line 24
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "commentImage", [], "any", false, false, false, 24), 'widget', ["attr" => ["class" => "hidden"]]);
+        echo "
+        ";
+        // line 25
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), "commentImage", [], "any", false, false, false, 25), 'errors');
+        echo "
     </div>
+
+    <div class=\"mt-4\">
+        ";
+        // line 29
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 29, $this->source); })()), "deleteImage", [], "any", false, false, false, 29), 'label');
+        echo "
+        ";
+        // line 30
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 30, $this->source); })()), "deleteImage", [], "any", false, false, false, 30), 'widget');
+        echo "
+        ";
+        // line 31
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 31, $this->source); })()), "deleteImage", [], "any", false, false, false, 31), 'errors');
+        echo "
+    </div>
+
     ";
-        // line 26
+        // line 34
         if (array_key_exists("comment", $context)) {
-            // line 27
-            echo "        <div>
+            // line 35
+            echo "        <div class=\"mt-4\">
             <div>
                 <a href=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_delete_comment", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["comment"]) || array_key_exists("comment", $context) ? $context["comment"] : (function () { throw new RuntimeError('Variable "comment" does not exist.', 29, $this->source); })()), "id", [], "any", false, false, false, 29)]), "html", null, true);
+            // line 37
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_delete_comment", ["comment" => twig_get_attribute($this->env, $this->source, (isset($context["comment"]) || array_key_exists("comment", $context) ? $context["comment"] : (function () { throw new RuntimeError('Variable "comment" does not exist.', 37, $this->source); })()), "id", [], "any", false, false, false, 37)]), "html", null, true);
             echo "\" onclick=\"return confirm('Are you sure you want to delete this comment?')\">
-                    <span class=\"px-2 rounded-md bg-gray-200\">Delete</span>
+                    <span class=\"px-2 rounded-md bg-gray-200 text-red-500\">Delete</span>
                 </a>
             </div>
         </div>
     ";
         }
-        // line 35
+        // line 43
         echo "
 
     <div>
@@ -175,8 +192,8 @@ class __TwigTemplate_f8b37c9196f3b2a9b0e7d9940edf418a extends Template
     </div>
 
     ";
-        // line 41
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 41, $this->source); })()), 'form_end');
+        // line 49
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 49, $this->source); })()), 'form_end');
         echo "
 
 ";
@@ -200,7 +217,7 @@ class __TwigTemplate_f8b37c9196f3b2a9b0e7d9940edf418a extends Template
 
     public function getDebugInfo()
     {
-        return array (  179 => 41,  171 => 35,  162 => 29,  158 => 27,  156 => 26,  150 => 23,  146 => 22,  142 => 21,  138 => 20,  134 => 19,  130 => 18,  123 => 14,  118 => 12,  112 => 10,  102 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  196 => 49,  188 => 43,  179 => 37,  175 => 35,  173 => 34,  167 => 31,  163 => 30,  159 => 29,  152 => 25,  148 => 24,  144 => 23,  138 => 20,  134 => 19,  130 => 18,  123 => 14,  118 => 12,  112 => 10,  102 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -221,20 +238,28 @@ class __TwigTemplate_f8b37c9196f3b2a9b0e7d9940edf418a extends Template
         {{ form_errors(form) }}
     </div>
 
-    <div>
+    <div class=\"mt-4\">
         {{ form_label(form.text, 'Please enter a comment', {'label_attr': {'class': 'block text-sm text-gray-700'}}) }}
         {{ form_widget(form.text, {'attr': {'class': 'block w-full shadow-sm border-gray-300'}}) }}
         {{ form_errors(form.text) }}
-        {{ form_label(form.commentImage, 'Change', {'label_attr': {'class': 'shadow-sm border-transparent bg-gray-300 hover:bg-gray-400 cursor-pointer rounded-md border p-2'}}) }}
+    </div>
+    <div class=\"mt-4\">
+        {{ form_label(form.commentImage, 'Change Image', {'label_attr': {'class': 'shadow-sm border-transparent bg-gray-300 hover:bg-gray-400 cursor-pointer rounded-md border p-2'}}) }}
         {{ form_widget(form.commentImage, {'attr': {'class': 'hidden'}}) }}
         {{ form_errors(form.commentImage) }}
-
     </div>
+
+    <div class=\"mt-4\">
+        {{ form_label(form.deleteImage) }}
+        {{ form_widget(form.deleteImage) }}
+        {{ form_errors(form.deleteImage) }}
+    </div>
+
     {% if comment is defined %}
-        <div>
+        <div class=\"mt-4\">
             <div>
-                <a href=\"{{ path('app_delete_comment', {id: comment.id}) }}\" onclick=\"return confirm('Are you sure you want to delete this comment?')\">
-                    <span class=\"px-2 rounded-md bg-gray-200\">Delete</span>
+                <a href=\"{{ path('app_delete_comment', {comment: comment.id}) }}\" onclick=\"return confirm('Are you sure you want to delete this comment?')\">
+                    <span class=\"px-2 rounded-md bg-gray-200 text-red-500\">Delete</span>
                 </a>
             </div>
         </div>

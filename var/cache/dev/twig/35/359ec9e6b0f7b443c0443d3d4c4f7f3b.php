@@ -200,7 +200,7 @@ class __TwigTemplate_1ceb49ae6d6293e44bbf8811488a337d extends Template
             // line 50
             if ( !(null === twig_get_attribute($this->env, $this->source, $context["comment"], "image", [], "any", false, false, false, 50))) {
                 // line 51
-                echo "                        <div class=\"\">";
+                echo "                        <div class=\"mr-5\">";
                 echo twig_include($this->env, $context, "shared/_comment_image.html.twig", ["comment" => $context["comment"], "size" => 70]);
                 echo "</div>
                     ";
@@ -209,17 +209,17 @@ class __TwigTemplate_1ceb49ae6d6293e44bbf8811488a337d extends Template
             echo "                    <div class=\"mt-2\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "text", [], "any", false, false, false, 53), "html", null, true);
             echo "</div>
-                    <div class=\"mt-3 mb-2 flex space-x-2\">
+                    <div class=\"flex mt-3 mb-2 space-x-2\">
                         ";
             // line 55
-            if ((twig_get_attribute($this->env, $this->source, $context["comment"], "author", [], "any", false, false, false, 55) == twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 55, $this->source); })()), "user", [], "any", false, false, false, 55))) {
+            if (((twig_get_attribute($this->env, $this->source, $context["comment"], "author", [], "any", false, false, false, 55) == twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 55, $this->source); })()), "user", [], "any", false, false, false, 55)) || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN"))) {
                 // line 56
                 echo "                            <a href=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_edit", ["comment" => twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 56)]), "html", null, true);
                 echo "\" class=\"text-indigo-600 hover:underline\">Edit</a>
                             <a href=\"";
                 // line 57
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_delete_comment", ["id" => twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 57)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_delete_comment", ["comment" => twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 57)]), "html", null, true);
                 echo "\" class=\"text-red-500 hover:underline delete-comment\" data-confirm=\"Are you sure you want to delete this comment?\">Delete</a>
                         ";
             }
@@ -334,13 +334,13 @@ class __TwigTemplate_1ceb49ae6d6293e44bbf8811488a337d extends Template
                 <div class=\"flex mt-2\">
                     <div class=\"border ml-4 mr-7 pb-12\"></div>
                     {% if comment.image is not null %}
-                        <div class=\"\">{{ include('shared/_comment_image.html.twig', {comment: comment, size: 70}) }}</div>
+                        <div class=\"mr-5\">{{ include('shared/_comment_image.html.twig', {comment: comment, size: 70}) }}</div>
                     {% endif %}
                     <div class=\"mt-2\">{{ comment.text }}</div>
-                    <div class=\"mt-3 mb-2 flex space-x-2\">
-                        {% if comment.author == app.user %}
+                    <div class=\"flex mt-3 mb-2 space-x-2\">
+                        {% if comment.author == app.user or is_granted('ROLE_ADMIN')%}
                             <a href=\"{{ path('app_comment_edit', {comment: comment.id}) }}\" class=\"text-indigo-600 hover:underline\">Edit</a>
-                            <a href=\"{{ path('app_delete_comment', {id: comment.id}) }}\" class=\"text-red-500 hover:underline delete-comment\" data-confirm=\"Are you sure you want to delete this comment?\">Delete</a>
+                            <a href=\"{{ path('app_delete_comment', {comment: comment.id}) }}\" class=\"text-red-500 hover:underline delete-comment\" data-confirm=\"Are you sure you want to delete this comment?\">Delete</a>
                         {% endif %}
                     </div>
                 </div>

@@ -14,6 +14,7 @@ class Post
 {
     public const EDIT = 'POST_EDIT';
     public const VIEW = 'POST_VIEW';
+    const DELETE = 'POST_DELETE';
 
     #[ORM\Id]
     #[ORM\GeneratedValue]

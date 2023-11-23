@@ -184,6 +184,7 @@ class PostController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var UploadedFile $postImage */
             $postImage = $form->get('postImage')->getData();
+            $postDelete = $form->get('deleteImage')->getData();
 
             $postData = $form->getData();
             // Checks if the image was passed
@@ -216,6 +217,11 @@ class PostController extends AbstractController
 
                 $repository->save($postData, true);
                 $this->addFlash('success', 'Your Post image was updated.');
+            }
+
+            if($postDelete)
+            {
+                $postData->setImage(null);
             }
 
             $repository->save($postData, true);
@@ -298,7 +304,7 @@ class PostController extends AbstractController
     }
 
     #[Route('/comment/{comment}/edit', name: 'app_comment_edit', priority: 2)]
-    #[IsGranted('IS_AUTHENTICATED_FULLY')]
+    #[IsGranted(Comment::EDIT, 'comment')]
     public function editComment(Comment $comment, Request $request, CommentRepository $repository, SluggerInterface $slugger): Response
     {
         // Retrieve the associated post for the comment
@@ -313,6 +319,7 @@ class PostController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var UploadedFile $commentImage */
             $commentImage = $form->get('commentImage')->getData();
+            $deleteImage = $form->get('deleteImage')->getData();
 
             // Retrieve data from the form
             $postData = $form->getData();
@@ -342,6 +349,11 @@ class PostController extends AbstractController
 
                 // Save the comment entity with the new image
                 $repository->save($comment, true);
+            }
+
+            if($deleteImage)
+            {
+                $postData->setImage(null);
             }
 
             // Save the updated comment data

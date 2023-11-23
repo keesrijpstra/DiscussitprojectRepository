@@ -40,7 +40,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "post/_post_tabs.html.twig"));
 
         // line 1
-        $this->loadTemplate("post/_post_tabs.html.twig", "post/_post_tabs.html.twig", 1, "920276396")->display($context);
+        $this->loadTemplate("post/_post_tabs.html.twig", "post/_post_tabs.html.twig", 1, "636943217")->display($context);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -63,7 +63,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8 extends Template
     {
         return new Source("{% embed 'shared/_tabs.html.twig' %}
     {% block tabs %}
-        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all', classes: 'hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 All Posts
             {% endblock %}
@@ -72,7 +72,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8 extends Template
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'ml-2' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 Top Liked
             {% endblock %}
@@ -81,7 +81,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8 extends Template
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 From People You Follow
             {% endblock %}
@@ -90,7 +90,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8 extends Template
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2'}%}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'}%}
             {% block content %}
                 Boards
             {% endblock %}
@@ -105,7 +105,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8 extends Template
 
 
 /* post/_post_tabs.html.twig */
-class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___920276396 extends Template
+class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___636943217 extends Template
 {
     private $source;
     private $macros = [];
@@ -157,22 +157,22 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___920276396 extends Templa
 
         // line 3
         echo "        ";
-        $this->loadTemplate("post/_post_tabs.html.twig", "post/_post_tabs.html.twig", 3, "1940790711")->display(twig_array_merge($context, ["route" => "app_show_all"]));
+        $this->loadTemplate("post/_post_tabs.html.twig", "post/_post_tabs.html.twig", 3, "138686880")->display(twig_array_merge($context, ["route" => "app_show_all", "classes" => "hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"]));
         // line 11
         echo "
         ";
         // line 12
-        $this->loadTemplate("post/_post_tabs.html.twig", "post/_post_tabs.html.twig", 12, "252797059")->display(twig_array_merge($context, ["route" => "app_post_top_liked", "classes" => "ml-2"]));
+        $this->loadTemplate("post/_post_tabs.html.twig", "post/_post_tabs.html.twig", 12, "1650479235")->display(twig_array_merge($context, ["route" => "app_post_top_liked", "classes" => "hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"]));
         // line 20
         echo "
         ";
         // line 21
-        $this->loadTemplate("post/_post_tabs.html.twig", "post/_post_tabs.html.twig", 21, "1512991088")->display(twig_array_merge($context, ["route" => "app_post_follows", "classes" => "ml-2"]));
+        $this->loadTemplate("post/_post_tabs.html.twig", "post/_post_tabs.html.twig", 21, "2014121106")->display(twig_array_merge($context, ["route" => "app_post_follows", "classes" => "ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"]));
         // line 29
         echo "
         ";
         // line 30
-        $this->loadTemplate("post/_post_tabs.html.twig", "post/_post_tabs.html.twig", 30, "1024023820")->display(twig_array_merge($context, ["route" => "app_show_post_boards", "classes" => "ml-2"]));
+        $this->loadTemplate("post/_post_tabs.html.twig", "post/_post_tabs.html.twig", 30, "1414166163")->display(twig_array_merge($context, ["route" => "app_show_post_boards", "classes" => "ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"]));
         // line 38
         echo "    ";
         
@@ -202,7 +202,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___920276396 extends Templa
     {
         return new Source("{% embed 'shared/_tabs.html.twig' %}
     {% block tabs %}
-        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all', classes: 'hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 All Posts
             {% endblock %}
@@ -211,7 +211,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___920276396 extends Templa
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'ml-2' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 Top Liked
             {% endblock %}
@@ -220,7 +220,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___920276396 extends Templa
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 From People You Follow
             {% endblock %}
@@ -229,7 +229,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___920276396 extends Templa
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2'}%}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'}%}
             {% block content %}
                 Boards
             {% endblock %}
@@ -244,7 +244,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___920276396 extends Templa
 
 
 /* post/_post_tabs.html.twig */
-class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1940790711 extends Template
+class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___138686880 extends Template
 {
     private $source;
     private $macros = [];
@@ -349,7 +349,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1940790711 extends Templ
     {
         return new Source("{% embed 'shared/_tabs.html.twig' %}
     {% block tabs %}
-        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all', classes: 'hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 All Posts
             {% endblock %}
@@ -358,7 +358,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1940790711 extends Templ
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'ml-2' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 Top Liked
             {% endblock %}
@@ -367,7 +367,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1940790711 extends Templ
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 From People You Follow
             {% endblock %}
@@ -376,7 +376,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1940790711 extends Templ
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2'}%}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'}%}
             {% block content %}
                 Boards
             {% endblock %}
@@ -391,7 +391,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1940790711 extends Templ
 
 
 /* post/_post_tabs.html.twig */
-class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___252797059 extends Template
+class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1650479235 extends Template
 {
     private $source;
     private $macros = [];
@@ -496,7 +496,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___252797059 extends Templa
     {
         return new Source("{% embed 'shared/_tabs.html.twig' %}
     {% block tabs %}
-        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all', classes: 'hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 All Posts
             {% endblock %}
@@ -505,7 +505,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___252797059 extends Templa
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'ml-2' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 Top Liked
             {% endblock %}
@@ -514,7 +514,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___252797059 extends Templa
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 From People You Follow
             {% endblock %}
@@ -523,7 +523,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___252797059 extends Templa
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2'}%}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'}%}
             {% block content %}
                 Boards
             {% endblock %}
@@ -538,7 +538,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___252797059 extends Templa
 
 
 /* post/_post_tabs.html.twig */
-class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1512991088 extends Template
+class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___2014121106 extends Template
 {
     private $source;
     private $macros = [];
@@ -643,7 +643,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1512991088 extends Templ
     {
         return new Source("{% embed 'shared/_tabs.html.twig' %}
     {% block tabs %}
-        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all', classes: 'hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 All Posts
             {% endblock %}
@@ -652,7 +652,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1512991088 extends Templ
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'ml-2' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 Top Liked
             {% endblock %}
@@ -661,7 +661,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1512991088 extends Templ
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 From People You Follow
             {% endblock %}
@@ -670,7 +670,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1512991088 extends Templ
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2'}%}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'}%}
             {% block content %}
                 Boards
             {% endblock %}
@@ -685,7 +685,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1512991088 extends Templ
 
 
 /* post/_post_tabs.html.twig */
-class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1024023820 extends Template
+class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1414166163 extends Template
 {
     private $source;
     private $macros = [];
@@ -790,7 +790,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1024023820 extends Templ
     {
         return new Source("{% embed 'shared/_tabs.html.twig' %}
     {% block tabs %}
-        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_all', classes: 'hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 All Posts
             {% endblock %}
@@ -799,7 +799,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1024023820 extends Templ
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'ml-2' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_top_liked', classes: 'hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 Top Liked
             {% endblock %}
@@ -808,7 +808,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1024023820 extends Templ
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2' } %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_post_follows', classes: 'ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' } %}
             {% block content %}
                 From People You Follow
             {% endblock %}
@@ -817,7 +817,7 @@ class __TwigTemplate_8c41a23b114e9751cd63d05ba6cc1df8___1024023820 extends Templ
             {% endblock %}
         {% endembed %}
 
-        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2'}%}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_show_post_boards', classes: 'ml-2 hover:bg-indigo-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'}%}
             {% block content %}
                 Boards
             {% endblock %}

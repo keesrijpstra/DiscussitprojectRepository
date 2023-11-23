@@ -18,9 +18,7 @@ class PostVoter extends Voter
 
     protected function supports(string $attribute, mixed $subject): bool
     {
-        // replace with your own logic
-        // https://symfony.com/doc/current/security/voters.html
-        return in_array($attribute, [Post::EDIT, Post::VIEW])
+        return in_array($attribute, [Post::EDIT, Post::VIEW, Post::DELETE])
             && $subject instanceof Post;
     }
 
@@ -50,6 +48,13 @@ class PostVoter extends Voter
 
             case Post::VIEW:
                 return true;
+
+            case Post::DELETE:
+                return $isAuth
+                    && ($subject->getAuthor()->getId() === $user->getId()
+                        || $this->security->isGranted('ROLE_EDITOR')
+                        || $this->security->isGranted('ROLE_ADMIN'));
+
         }
 
         return false;

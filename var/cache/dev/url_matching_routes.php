@@ -81,7 +81,7 @@ return [
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
-        34 => [[['_route' => 'app_delete_comment', '_controller' => 'App\\Controller\\DeleteController::deleteComment'], ['id'], null, null, false, true, null]],
+        34 => [[['_route' => 'app_delete_comment', '_controller' => 'App\\Controller\\DeleteController::deleteComment'], ['comment'], null, null, false, true, null]],
         54 => [[['_route' => 'app_comment_edit', '_controller' => 'App\\Controller\\PostController::editComment'], ['comment'], null, null, false, false, null]],
         89 => [[['_route' => 'app_delete_post', '_controller' => 'App\\Controller\\DeleteController::deletePost'], ['post'], null, null, false, true, null]],
         115 => [[['_route' => 'app_show_edit', '_controller' => 'App\\Controller\\PostController::editPost'], ['post'], null, null, false, false, null]],

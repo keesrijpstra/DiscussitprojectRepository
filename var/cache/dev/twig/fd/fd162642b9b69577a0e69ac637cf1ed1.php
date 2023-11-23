@@ -40,7 +40,7 @@ class __TwigTemplate_c7ba486b39cffd9cb3382bce10398753 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "post/_post.html.twig"));
 
         // line 1
-        echo "<div class=\"bg-gray-100 mb-4\">
+        echo "<div class=\"flex flex-col\">
     <div class=\"bg-indigo-100 text-indigo-800 shadow-lg rounded-lg overflow-hidden\">
         <div class=\"p-4\">
             <div class=\"text-2xl font-bold mb-2\">
@@ -105,7 +105,7 @@ class __TwigTemplate_c7ba486b39cffd9cb3382bce10398753 extends Template
             <div class=\"flex space-x-2 mb-2\">
                 ";
         // line 30
-        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 30, $this->source); })()), "author", [], "any", false, false, false, 30), "id", [], "any", false, false, false, 30) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "user", [], "any", false, false, false, 30), "id", [], "any", false, false, false, 30))) {
+        if (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 30, $this->source); })()), "author", [], "any", false, false, false, 30), "id", [], "any", false, false, false, 30) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "user", [], "any", false, false, false, 30), "id", [], "any", false, false, false, 30)) || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN"))) {
             // line 31
             echo "                <a href=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_show_edit", ["post" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 31, $this->source); })()), "id", [], "any", false, false, false, 31)]), "html", null, true);
@@ -123,7 +123,7 @@ class __TwigTemplate_c7ba486b39cffd9cb3382bce10398753 extends Template
                 </a>
                 ";
         // line 36
-        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 36, $this->source); })()), "author", [], "any", false, false, false, 36), "id", [], "any", false, false, false, 36) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36), "id", [], "any", false, false, false, 36))) {
+        if (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 36, $this->source); })()), "author", [], "any", false, false, false, 36), "id", [], "any", false, false, false, 36) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36), "id", [], "any", false, false, false, 36)) || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN"))) {
             // line 37
             echo "                <a href=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_delete_post", ["post" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 37, $this->source); })()), "id", [], "any", false, false, false, 37)]), "html", null, true);
@@ -145,9 +145,6 @@ class __TwigTemplate_c7ba486b39cffd9cb3382bce10398753 extends Template
 </div>
 
 ";
-        // line 50
-        echo "
-";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -168,12 +165,12 @@ class __TwigTemplate_c7ba486b39cffd9cb3382bce10398753 extends Template
 
     public function getDebugInfo()
     {
-        return array (  149 => 50,  140 => 43,  136 => 41,  128 => 37,  126 => 36,  121 => 34,  116 => 33,  110 => 31,  108 => 30,  100 => 27,  96 => 25,  90 => 22,  85 => 21,  79 => 18,  74 => 17,  72 => 16,  66 => 13,  60 => 10,  53 => 6,  49 => 5,  43 => 1,);
+        return array (  140 => 43,  136 => 41,  128 => 37,  126 => 36,  121 => 34,  116 => 33,  110 => 31,  108 => 30,  100 => 27,  96 => 25,  90 => 22,  85 => 21,  79 => 18,  74 => 17,  72 => 16,  66 => 13,  60 => 10,  53 => 6,  49 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"bg-gray-100 mb-4\">
+        return new Source("<div class=\"flex flex-col\">
     <div class=\"bg-indigo-100 text-indigo-800 shadow-lg rounded-lg overflow-hidden\">
         <div class=\"p-4\">
             <div class=\"text-2xl font-bold mb-2\">
@@ -202,13 +199,13 @@ class __TwigTemplate_c7ba486b39cffd9cb3382bce10398753 extends Template
                 <a href=\"{{ path('app_profile', {id: post.author.id} ) }}\" class=\"hover:underline\">{{ post.author.email }}</a>
             </div>
             <div class=\"flex space-x-2 mb-2\">
-                {% if post.author.id == app.user.id %}
+                {% if post.author.id == app.user.id or is_granted('ROLE_ADMIN') %}
                 <a href=\"{{ path('app_show_edit', {post: post.id}) }}\" class=\"text-indigo-600 hover:underline\">Edit</a>
                 {% endif %}
                 <a href=\"{{ path('app_add_comment', {post: post.id}) }}\" class=\"text-indigo-600 hover:underline\">
                     Comment <span class=\"px-2 rounded-md bg-indigo-200\">{{ post.comments.count }}</span>
                 </a>
-                {% if post.author.id == app.user.id %}
+                {% if post.author.id == app.user.id or is_granted('ROLE_ADMIN')%}
                 <a href=\"{{ path('app_delete_post', {post: post.id}) }}\" class=\"text-red-500 hover:underline\" onclick=\"return confirm('Are you sure you want to delete this post?');\">
                     Delete
                 </a>
@@ -220,8 +217,6 @@ class __TwigTemplate_c7ba486b39cffd9cb3382bce10398753 extends Template
         </div>
     </div>
 </div>
-
-{#Gives the user a prompt if they are sure they want to delete.#}
 
 ", "post/_post.html.twig", "/home/kees/PhpstormProjects/chrisvbeem/templates/post/_post.html.twig");
     }

@@ -118,10 +118,10 @@ class __TwigTemplate_dff2ab654357fd86ac0443290b433056 extends Template
 
     </div>
 
-    <div>
+    <div class=\"mt-4\">
         ";
         // line 26
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), "postImage", [], "any", false, false, false, 26), 'label', ["label_attr" => ["class" => "shadow-sm border-transparent bg-gray-300 hover:bg-gray-400 cursor-pointer rounded-md border p-2"], "label" => "Change"]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), "postImage", [], "any", false, false, false, 26), 'label', ["label_attr" => ["class" => "shadow-sm border-transparent bg-gray-300 hover:bg-gray-400 cursor-pointer rounded-md border p-2"], "label" => "Submit Image"]);
         echo "
         ";
         // line 27
@@ -133,13 +133,28 @@ class __TwigTemplate_dff2ab654357fd86ac0443290b433056 extends Template
         echo "
     </div>
 
+    <div class=\"mt-4\">
+        ";
+        // line 32
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 32, $this->source); })()), "deleteImage", [], "any", false, false, false, 32), 'label');
+        echo "
+        ";
+        // line 33
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 33, $this->source); })()), "deleteImage", [], "any", false, false, false, 33), 'widget');
+        echo "
+        ";
+        // line 34
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 34, $this->source); })()), "deleteImage", [], "any", false, false, false, 34), 'errors');
+        echo "
+    </div>
+
     <div>
         <button type=\"submit\" class=\"block w-full shadow-sm border-transparent bg-indigo-600 hover:bg-indigo-400 rounded-md border p-2 mt-4 mb-2\">Save</button>
     </div>
 
 ";
-        // line 35
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 35, $this->source); })()), 'form_end');
+        // line 41
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 41, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -162,7 +177,7 @@ class __TwigTemplate_dff2ab654357fd86ac0443290b433056 extends Template
 
     public function getDebugInfo()
     {
-        return array (  142 => 35,  132 => 28,  128 => 27,  124 => 26,  116 => 21,  112 => 20,  108 => 19,  101 => 15,  97 => 14,  93 => 13,  87 => 10,  83 => 9,  79 => 8,  73 => 5,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  157 => 41,  147 => 34,  143 => 33,  139 => 32,  132 => 28,  128 => 27,  124 => 26,  116 => 21,  112 => 20,  108 => 19,  101 => 15,  97 => 14,  93 => 13,  87 => 10,  83 => 9,  79 => 8,  73 => 5,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -191,10 +206,16 @@ class __TwigTemplate_dff2ab654357fd86ac0443290b433056 extends Template
 
     </div>
 
-    <div>
-        {{ form_label(form.postImage, 'Change', {'label_attr': {'class': 'shadow-sm border-transparent bg-gray-300 hover:bg-gray-400 cursor-pointer rounded-md border p-2'}}) }}
+    <div class=\"mt-4\">
+        {{ form_label(form.postImage, 'Submit Image', {'label_attr': {'class': 'shadow-sm border-transparent bg-gray-300 hover:bg-gray-400 cursor-pointer rounded-md border p-2'}}) }}
         {{ form_widget(form.postImage, {'attr': {'class': 'hidden'}}) }}
         {{ form_errors(form.postImage) }}
+    </div>
+
+    <div class=\"mt-4\">
+        {{ form_label(form.deleteImage) }}
+        {{ form_widget(form.deleteImage) }}
+        {{ form_errors(form.deleteImage) }}
     </div>
 
     <div>

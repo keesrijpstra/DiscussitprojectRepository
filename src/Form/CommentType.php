@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Comment;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -29,6 +30,11 @@ class CommentType extends AbstractType
                         'mimeTypesMessage' => 'Please upload a valid PNG/JPEG image',
                     ]),
                 ],
+            ])
+            ->add('deleteImage', CheckboxType::class, [
+                'label' => 'Delete image?',
+                'mapped' => false,
+                'required' => false
             ]);
     }
 

@@ -40,7 +40,7 @@ class __TwigTemplate_e839e962a71eb2542d0e95ff4c0450ec extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "profile/_profile_tabs.html.twig"));
 
         // line 1
-        $this->loadTemplate("profile/_profile_tabs.html.twig", "profile/_profile_tabs.html.twig", 1, "679321631")->display($context);
+        $this->loadTemplate("profile/_profile_tabs.html.twig", "profile/_profile_tabs.html.twig", 1, "1280018479")->display($context);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -96,7 +96,7 @@ class __TwigTemplate_e839e962a71eb2542d0e95ff4c0450ec extends Template
 
 
 /* profile/_profile_tabs.html.twig */
-class __TwigTemplate_e839e962a71eb2542d0e95ff4c0450ec___679321631 extends Template
+class __TwigTemplate_e839e962a71eb2542d0e95ff4c0450ec___1280018479 extends Template
 {
     private $source;
     private $macros = [];
@@ -148,17 +148,17 @@ class __TwigTemplate_e839e962a71eb2542d0e95ff4c0450ec___679321631 extends Templa
 
         // line 3
         echo "        ";
-        $this->loadTemplate("profile/_profile_tabs.html.twig", "profile/_profile_tabs.html.twig", 3, "1643401774")->display(twig_array_merge($context, ["route" => "app_profile"]));
+        $this->loadTemplate("profile/_profile_tabs.html.twig", "profile/_profile_tabs.html.twig", 3, "1785405358")->display(twig_array_merge($context, ["route" => "app_profile"]));
         // line 11
         echo "
         ";
         // line 12
-        $this->loadTemplate("profile/_profile_tabs.html.twig", "profile/_profile_tabs.html.twig", 12, "953033946")->display(twig_array_merge($context, ["route" => "app_profile_follows", "classes" => "ml-2"]));
+        $this->loadTemplate("profile/_profile_tabs.html.twig", "profile/_profile_tabs.html.twig", 12, "71338022")->display(twig_array_merge($context, ["route" => "app_profile_follows", "classes" => "ml-2"]));
         // line 20
         echo "
         ";
         // line 21
-        $this->loadTemplate("profile/_profile_tabs.html.twig", "profile/_profile_tabs.html.twig", 21, "719417124")->display(twig_array_merge($context, ["route" => "app_profile_followers", "classes" => "ml-2"]));
+        $this->loadTemplate("profile/_profile_tabs.html.twig", "profile/_profile_tabs.html.twig", 21, "1359337203")->display(twig_array_merge($context, ["route" => "app_profile_followers", "classes" => "ml-2"]));
         // line 29
         echo "    ";
         
@@ -221,7 +221,7 @@ class __TwigTemplate_e839e962a71eb2542d0e95ff4c0450ec___679321631 extends Templa
 
 
 /* profile/_profile_tabs.html.twig */
-class __TwigTemplate_e839e962a71eb2542d0e95ff4c0450ec___1643401774 extends Template
+class __TwigTemplate_e839e962a71eb2542d0e95ff4c0450ec___1785405358 extends Template
 {
     private $source;
     private $macros = [];
@@ -361,7 +361,7 @@ class __TwigTemplate_e839e962a71eb2542d0e95ff4c0450ec___1643401774 extends Templ
 
 
 /* profile/_profile_tabs.html.twig */
-class __TwigTemplate_e839e962a71eb2542d0e95ff4c0450ec___953033946 extends Template
+class __TwigTemplate_e839e962a71eb2542d0e95ff4c0450ec___71338022 extends Template
 {
     private $source;
     private $macros = [];
@@ -501,7 +501,7 @@ class __TwigTemplate_e839e962a71eb2542d0e95ff4c0450ec___953033946 extends Templa
 
 
 /* profile/_profile_tabs.html.twig */
-class __TwigTemplate_e839e962a71eb2542d0e95ff4c0450ec___719417124 extends Template
+class __TwigTemplate_e839e962a71eb2542d0e95ff4c0450ec___1359337203 extends Template
 {
     private $source;
     private $macros = [];

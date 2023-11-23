@@ -60,7 +60,7 @@ class __TwigTemplate_ddb3312200c207c675df41f7bd54cf0b extends Template
         }
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
             // line 3
-            echo "        ";
+            echo "            ";
             echo twig_include($this->env, $context, "post/_post.html.twig", ["post" => $context["post"]]);
             echo "
     ";
@@ -105,7 +105,7 @@ class __TwigTemplate_ddb3312200c207c675df41f7bd54cf0b extends Template
     {
         return new Source("<div class=\"grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4\">
     {% for post in posts %}
-        {{ include('post/_post.html.twig', {post: post}) }}
+            {{ include('post/_post.html.twig', {post: post}) }}
     {% endfor %}
 </div>", "post/_post_list.html.twig", "/home/kees/PhpstormProjects/chrisvbeem/templates/post/_post_list.html.twig");
     }

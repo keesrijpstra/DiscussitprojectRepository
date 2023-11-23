@@ -218,13 +218,17 @@
     <parameter key="security.role_hierarchy.roles" type="collection">
       <parameter key="ROLE_ADMIN" type="collection">
         <parameter>ROLE_EDITOR</parameter>
+        <parameter>ROLE_COMMENTER</parameter>
+        <parameter>ROLE_USER</parameter>
       </parameter>
       <parameter key="ROLE_EDITOR" type="collection">
         <parameter>ROLE_COMMENTER</parameter>
+        <parameter>ROLE_USER</parameter>
       </parameter>
       <parameter key="ROLE_COMMENTER" type="collection">
         <parameter>ROLE_USER</parameter>
       </parameter>
+      <parameter key="ROLE_USER" type="collection"/>
     </parameter>
     <parameter key="security.access.denied_url">null</parameter>
     <parameter key="security.authentication.manager.erase_credentials">true</parameter>
@@ -350,9 +354,6 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
-    <service id="App\Entity" class="App\Entity" abstract="true">
-      <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
-    </service>
     <service id="App\Command\CreateUserCommand" class="App\Command\CreateUserCommand" autowire="true" autoconfigure="true">
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
@@ -429,6 +430,11 @@
         <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\SettingsProfileController"/>
       </call>
     </service>
+    <service id="App\Entity\Board" class="App\Entity\Board" autowire="true" autoconfigure="true"/>
+    <service id="App\Entity\Comment" class="App\Entity\Comment" autowire="true" autoconfigure="true"/>
+    <service id="App\Entity\Post" class="App\Entity\Post" autowire="true" autoconfigure="true"/>
+    <service id="App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true"/>
+    <service id="App\Entity\UserProfile" class="App\Entity\UserProfile" autowire="true" autoconfigure="true"/>
     <service id="App\Form\CommentType" class="App\Form\CommentType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -471,6 +477,10 @@
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
     <service id="App\Security\UserChecker" class="App\Security\UserChecker" autowire="true" autoconfigure="true"/>
+    <service id="App\Security\Voter\CommentVoter" class="App\Security\Voter\CommentVoter" autowire="true" autoconfigure="true">
+      <tag name="security.voter"/>
+      <argument type="service" id="security.helper"/>
+    </service>
     <service id="App\Security\Voter\PostVoter" class="App\Security\Voter\PostVoter" autowire="true" autoconfigure="true">
       <tag name="security.voter"/>
       <argument type="service" id="security.helper"/>
@@ -6163,7 +6173,15 @@
         </service>
       </argument>
     </service>
-    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap"/>
+    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap">
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.28NqKnb"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+    </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener">
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.untracked_token_storage"/>
@@ -6674,6 +6692,14 @@
         <argument key="security.firewall.map.context.main" type="service_closure" id="security.firewall.map.context.main"/>
       </argument>
     </service>
+    <service id=".security.request_matcher.obhk0jm" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
+      <argument>^/admin</argument>
+    </service>
+    <service id=".security.request_matcher.28NqKnb" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
+      <argument type="collection">
+        <argument type="service" id=".security.request_matcher.obhk0jm"/>
+      </argument>
+    </service>
     <service id="security.command.user_password_hash" class="Symfony\Component\PasswordHasher\Command\UserPasswordHashCommand">
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
@@ -6995,6 +7021,8 @@
     <service id=".abstract.instanceof.App\Repository\UserProfileRepository" class="App\Repository\UserProfileRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Security\Core\Authorization\Voter\VoterInterface.0.App\Security\Voter\CommentVoter" class="App\Security\Voter\CommentVoter" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Security\Voter\CommentVoter" class="App\Security\Voter\CommentVoter" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Security\Core\Authorization\Voter\VoterInterface.0.App\Security\Voter\PostVoter" class="App\Security\Voter\PostVoter" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Security\Voter\PostVoter" class="App\Security\Voter\PostVoter" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.7nzbL4K" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7374,14 +7402,14 @@
     <service id=".service_locator.L0k.WYV" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="comment" type="service_closure" id=".errored..service_locator.L0k.WYV.App\Entity\Comment"/>
+        <argument key="comment" type="service_closure" id="App\Entity\Comment"/>
         <argument key="repository" type="service_closure" id="App\Repository\CommentRepository"/>
       </argument>
     </service>
     <service id=".service_locator.ZsDiLJf" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="post" type="service_closure" id=".errored..service_locator.ZsDiLJf.App\Entity\Post"/>
+        <argument key="post" type="service_closure" id="App\Entity\Post"/>
         <argument key="repository" type="service_closure" id="App\Repository\PostRepository"/>
       </argument>
     </service>
@@ -7389,26 +7417,26 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="doctrine" type="service_closure" id="doctrine"/>
-        <argument key="userToFollow" type="service_closure" id=".errored..service_locator.y.pi5vY.App\Entity\User"/>
+        <argument key="userToFollow" type="service_closure" id="App\Entity\User"/>
       </argument>
     </service>
     <service id=".service_locator.spN9U5." class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="doctrine" type="service_closure" id="doctrine"/>
-        <argument key="userToUnfollow" type="service_closure" id=".errored..service_locator.spN9U5..App\Entity\User"/>
+        <argument key="userToUnfollow" type="service_closure" id="App\Entity\User"/>
       </argument>
     </service>
     <service id=".service_locator.PYF7PhY" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="post" type="service_closure" id=".errored..service_locator.PYF7PhY.App\Entity\Post"/>
+        <argument key="post" type="service_closure" id="App\Entity\Post"/>
       </argument>
     </service>
     <service id=".service_locator.hAGYStx" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="comment" type="service_closure" id=".errored..service_locator.hAGYStx.App\Entity\Comment"/>
+        <argument key="comment" type="service_closure" id="App\Entity\Comment"/>
       </argument>
     </service>
     <service id=".service_locator.nIv_c7s" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7432,7 +7460,7 @@
     <service id=".service_locator.4TPgo9W" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="board" type="service_closure" id=".errored..service_locator.4TPgo9W.App\Entity\Board"/>
+        <argument key="board" type="service_closure" id="App\Entity\Board"/>
         <argument key="repository" type="service_closure" id="App\Repository\BoardRepository"/>
       </argument>
     </service>
@@ -7447,7 +7475,7 @@
     <service id=".service_locator.HOk5OQw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="post" type="service_closure" id=".errored..service_locator.HOk5OQw.App\Entity\Post"/>
+        <argument key="post" type="service_closure" id="App\Entity\Post"/>
         <argument key="repository" type="service_closure" id="App\Repository\PostRepository"/>
         <argument key="slugger" type="service_closure" id="slugger"/>
       </argument>
@@ -7456,14 +7484,14 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="commentRepository" type="service_closure" id="App\Repository\CommentRepository"/>
-        <argument key="post" type="service_closure" id=".errored..service_locator.qi4C8se.App\Entity\Post"/>
+        <argument key="post" type="service_closure" id="App\Entity\Post"/>
         <argument key="slugger" type="service_closure" id="slugger"/>
       </argument>
     </service>
     <service id=".service_locator..USql3_" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="comment" type="service_closure" id=".errored..service_locator..USql3_.App\Entity\Comment"/>
+        <argument key="comment" type="service_closure" id="App\Entity\Comment"/>
         <argument key="repository" type="service_closure" id="App\Repository\CommentRepository"/>
         <argument key="slugger" type="service_closure" id="slugger"/>
       </argument>
@@ -7472,13 +7500,13 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="posts" type="service_closure" id="App\Repository\PostRepository"/>
-        <argument key="user" type="service_closure" id=".errored..service_locator.OfDrtWW.App\Entity\User"/>
+        <argument key="user" type="service_closure" id="App\Entity\User"/>
       </argument>
     </service>
     <service id=".service_locator.Hz5btge" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="user" type="service_closure" id=".errored..service_locator.Hz5btge.App\Entity\User"/>
+        <argument key="user" type="service_closure" id="App\Entity\User"/>
       </argument>
     </service>
     <service id=".service_locator.e_4zbH4" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7878,6 +7906,10 @@
     </service>
     <service id=".debug.security.voter.security.access.expression_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
       <argument type="service" id="security.access.expression_voter"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+    </service>
+    <service id=".debug.security.voter.App\Security\Voter\CommentVoter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
+      <argument type="service" id="App\Security\Voter\CommentVoter"/>
       <argument type="service" id="debug.event_dispatcher"/>
     </service>
     <service id=".debug.security.voter.App\Security\Voter\PostVoter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
@@ -8607,6 +8639,7 @@
         <argument type="service" id=".debug.security.voter.security.access.authenticated_voter"/>
         <argument type="service" id=".debug.security.voter.security.access.role_hierarchy_voter"/>
         <argument type="service" id=".debug.security.voter.security.access.expression_voter"/>
+        <argument type="service" id=".debug.security.voter.App\Security\Voter\CommentVoter"/>
         <argument type="service" id=".debug.security.voter.App\Security\Voter\PostVoter"/>
       </argument>
       <argument type="service">
@@ -8638,42 +8671,6 @@
     <service id="debug.security.event_dispatcher.main.inner" class="Symfony\Component\EventDispatcher\EventDispatcher"/>
     <service id=".errored..service_locator.y4_Zrx..Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.y4_Zrx.&quot;: it needs an instance of &quot;Symfony\Component\Config\Loader\LoaderInterface&quot; but this type has been excluded from autowiring."/>
-    </service>
-    <service id=".errored..service_locator.L0k.WYV.App\Entity\Comment" class="App\Entity\Comment">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.L0k.WYV&quot;: it needs an instance of &quot;App\Entity\Comment&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
-    <service id=".errored..service_locator.ZsDiLJf.App\Entity\Post" class="App\Entity\Post">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.ZsDiLJf&quot;: it needs an instance of &quot;App\Entity\Post&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
-    <service id=".errored..service_locator.y.pi5vY.App\Entity\User" class="App\Entity\User">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.y.pi5vY&quot;: it needs an instance of &quot;App\Entity\User&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
-    <service id=".errored..service_locator.spN9U5..App\Entity\User" class="App\Entity\User">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.spN9U5.&quot;: it needs an instance of &quot;App\Entity\User&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
-    <service id=".errored..service_locator.PYF7PhY.App\Entity\Post" class="App\Entity\Post">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.PYF7PhY&quot;: it needs an instance of &quot;App\Entity\Post&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
-    <service id=".errored..service_locator.hAGYStx.App\Entity\Comment" class="App\Entity\Comment">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.hAGYStx&quot;: it needs an instance of &quot;App\Entity\Comment&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
-    <service id=".errored..service_locator.4TPgo9W.App\Entity\Board" class="App\Entity\Board">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.4TPgo9W&quot;: it needs an instance of &quot;App\Entity\Board&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
-    <service id=".errored..service_locator.HOk5OQw.App\Entity\Post" class="App\Entity\Post">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.HOk5OQw&quot;: it needs an instance of &quot;App\Entity\Post&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
-    <service id=".errored..service_locator.qi4C8se.App\Entity\Post" class="App\Entity\Post">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.qi4C8se&quot;: it needs an instance of &quot;App\Entity\Post&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
-    <service id=".errored..service_locator..USql3_.App\Entity\Comment" class="App\Entity\Comment">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator..USql3_&quot;: it needs an instance of &quot;App\Entity\Comment&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
-    <service id=".errored..service_locator.OfDrtWW.App\Entity\User" class="App\Entity\User">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.OfDrtWW&quot;: it needs an instance of &quot;App\Entity\User&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
-    <service id=".errored..service_locator.Hz5btge.App\Entity\User" class="App\Entity\User">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.Hz5btge&quot;: it needs an instance of &quot;App\Entity\User&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".App\Command\CreateUserCommand.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>app:create-user</argument>
@@ -9772,22 +9769,22 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id="security.event_dispatcher.main" alias="debug.security.event_dispatcher.main"/>
     <service id=".service_locator.gFlme_s" alias=".service_locator.y4_Zrx."/>
-    <service id=".service_locator.Xdl.Ig3" alias=".service_locator.L0k.WYV"/>
-    <service id=".service_locator.iadCJ7D" alias=".service_locator.ZsDiLJf"/>
-    <service id=".service_locator.3ptjU.R" alias=".service_locator.y.pi5vY"/>
-    <service id=".service_locator.uZDhN_F" alias=".service_locator.spN9U5."/>
-    <service id=".service_locator.wA7N8Gi" alias=".service_locator.PYF7PhY"/>
-    <service id=".service_locator.jvkdxbJ" alias=".service_locator.hAGYStx"/>
+    <service id=".service_locator.7j4MUvs" alias=".service_locator.L0k.WYV"/>
+    <service id=".service_locator.a60_5Zo" alias=".service_locator.ZsDiLJf"/>
+    <service id=".service_locator.11s.Fw0" alias=".service_locator.y.pi5vY"/>
+    <service id=".service_locator.yhvRga7" alias=".service_locator.spN9U5."/>
+    <service id=".service_locator.DwkMd.3" alias=".service_locator.PYF7PhY"/>
+    <service id=".service_locator.LVxVBtX" alias=".service_locator.hAGYStx"/>
     <service id=".service_locator.f3ob9Ar" alias=".service_locator.nIv_c7s"/>
     <service id=".service_locator.YyZa5jG" alias=".service_locator.Ge47UTU"/>
     <service id=".service_locator.TOGhnog" alias=".service_locator.2T1GlL4"/>
-    <service id=".service_locator.6pI9jhu" alias=".service_locator.4TPgo9W"/>
+    <service id=".service_locator.6Emvz4_" alias=".service_locator.4TPgo9W"/>
     <service id=".service_locator.OzZYx3B" alias=".service_locator.rbSxyT2"/>
-    <service id=".service_locator.sgGqc3N" alias=".service_locator.HOk5OQw"/>
-    <service id=".service_locator.5vWf6Sb" alias=".service_locator.qi4C8se"/>
-    <service id=".service_locator.nBKqjFw" alias=".service_locator..USql3_"/>
-    <service id=".service_locator.2zkA5.Z" alias=".service_locator.OfDrtWW"/>
-    <service id=".service_locator.EmZ4cZI" alias=".service_locator.Hz5btge"/>
+    <service id=".service_locator.q4D7e84" alias=".service_locator.HOk5OQw"/>
+    <service id=".service_locator.2iE7iL9" alias=".service_locator.qi4C8se"/>
+    <service id=".service_locator.aarkR55" alias=".service_locator..USql3_"/>
+    <service id=".service_locator.WJS1zZB" alias=".service_locator.OfDrtWW"/>
+    <service id=".service_locator.0mz2hrU" alias=".service_locator.Hz5btge"/>
     <service id=".service_locator.qnm_CJ1" alias=".service_locator.e_4zbH4"/>
     <service id=".service_locator.5cKt1SW" alias=".service_locator.1Z9fEX7"/>
     <service id=".service_locator.CcQ5exe" alias=".service_locator.IVbJWPS"/>

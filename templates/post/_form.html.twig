@@ -22,10 +22,16 @@
 
     </div>
 
-    <div>
-        {{ form_label(form.postImage, 'Change', {'label_attr': {'class': 'shadow-sm border-transparent bg-gray-300 hover:bg-gray-400 cursor-pointer rounded-md border p-2'}}) }}
+    <div class="mt-4">
+        {{ form_label(form.postImage, 'Submit Image', {'label_attr': {'class': 'shadow-sm border-transparent bg-gray-300 hover:bg-gray-400 cursor-pointer rounded-md border p-2'}}) }}
         {{ form_widget(form.postImage, {'attr': {'class': 'hidden'}}) }}
         {{ form_errors(form.postImage) }}
+    </div>
+
+    <div class="mt-4">
+        {{ form_label(form.deleteImage) }}
+        {{ form_widget(form.deleteImage) }}
+        {{ form_errors(form.deleteImage) }}
     </div>
 
     <div>
